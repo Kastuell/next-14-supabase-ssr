@@ -1,6 +1,6 @@
 {
   "services": [
-    { "id": "1" "name": "Магнитно-Резонансная Томография", "img": "../files/cmho.png", "path": "/mrt", "description": "123" },
+    { "id": "1", "name": "Магнитно-Резонансная Томография", "img": "../files/cmho.png", "path": "/mrt", "description": "123" },
         { "id": "2", "name": "Компьютерная Томография", "img": "../files/cmho.png", "path": "/kt" },
         { "id": "3", "name": "УЗИ", "img": "../files/cmho.png", "path": "/uzi" },
         { "id": "4", "name": "Лаборатория (Анализы)", "img": "../files/cmho.png", "path": "/lab" },
