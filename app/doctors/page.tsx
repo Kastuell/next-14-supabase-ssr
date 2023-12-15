@@ -1,40 +1,37 @@
-import createSupabaseServerClient from "@/lib/supabase/server";
+import getDoctors from "@/actions/getDoctors";
 
 export default async function Doctors() {
-  const img = "../doctor.jpg";
-  const special = "Терапевт";
-  const name = "Иванов Иван Иванович";
-  const stage = "20 лет";
+  // const img = "../doctor.jpg";
+  // const special = "Терапевт";
+  // const name = "Иванов Иван Иванович";
+  // const stage = "20 лет";
 
-  const testData = [
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-    { id: 1, special: special, name: name, stage: stage, img: img },
-  ];
-  const supabase = await createSupabaseServerClient()
-  const { data, error } = await supabase
-    .from('doctors')
-    .select()
+  // const testData = [
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  //   { id: 1, special: special, name: name, stage: stage, img: img },
+  // ];
+  const data = await getDoctors()
   console.log(data)
   return (
     <div className="container">
       <div>
         <h1 className=" text-4xl">Наши Врачи</h1>
         <div className="mt-10 grid grid-cols-4 gap-4 lg+:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm+:grid-cols-1 text-center">
-          {data?.map((doctor) => (
+          {data?.map((doctor:any) => (
             <div>
               <div className="flex flex-col   w-[250px] border border-maincolor rounded-t-[25px] overflow-hidden">
                 <div className="">
