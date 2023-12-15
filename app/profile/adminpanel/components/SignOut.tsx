@@ -15,7 +15,7 @@ export default function SignOut() {
 
     return(
         <form action={logout}>
-            <Button>SignOut</Button>
+            <Button>Выйти</Button>
         </form>
     )
 }

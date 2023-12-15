@@ -1,5 +1,6 @@
 'use client'
 
+import { CircleUser } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../images/logo.png';
@@ -13,9 +14,8 @@ export default function TheHeader() {
         { id: 1, href: '/', text: 'Главная', },
         { id: 2, href: '/services', text: 'Услуги', },
         { id: 3, href: '/doctors', text: 'Врачи', },
-        { id: 4, href: '/blog', text: 'Блог', },
-        { id: 5, href: '/register', text: 'Запись', },
-        { id: 6, href: '/about', text: 'О нас', },
+        { id: 4, href: '/register', text: 'Запись', },
+        { id: 5, href: '/about', text: 'О нас', },
     ]
 
 
@@ -68,6 +68,9 @@ export default function TheHeader() {
                                 <li><Link href="" className="font-medium text-xl text-stone-800 hover:text-[#69c7f7] transition-colors lg:text-base">Запись</Link></li>
                                 <li><Link href="" className="font-medium text-xl text-stone-800 hover:text-[#69c7f7] transition-colors lg:text-base">О нас</Link></li> */}
                     </ul>
+                    <Link href='profile' title="профиль">
+                        <CircleUser />
+                    </Link>
                     <div className="hidden md:block">
                         <HamburgerMenu NavInfo={NavInfo} />
                     </div>

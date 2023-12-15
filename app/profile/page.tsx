@@ -1,5 +1,7 @@
 import readUserSession, { readUser } from "@/lib/actions"
+import Link from "next/link"
 import { redirect } from "next/navigation"
+import SignOut from "./adminpanel/components/SignOut"
 
 export default async function Profile() {
     const { data } = await readUserSession()
@@ -7,22 +9,23 @@ export default async function Profile() {
     if (!data.session) {
         return redirect("/auth-server-action")
     }
+    console.log(data.session.user.email)
     return (
         <div className="p-16">
             <div className="p-8 bg-white shadow mt-24">
                 <div className="grid grid-cols-1 md:grid-cols-3">
                     <div className="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0">
                         <div>
-                            <p className="font-bold text-gray-700 text-xl">22</p>
-                            <p className="text-gray-400">Friends</p>
+                            <p className="font-bold text-gray-700 text-xl">0</p>
+                            <p className="text-gray-400">Заказы</p>
                         </div>
                         <div>
-                            <p className="font-bold text-gray-700 text-xl">10</p>
-                            <p className="text-gray-400">Photos</p>
+                            <p className="font-bold text-gray-700 text-xl">0</p>
+                            <p className="text-gray-400">Оценки</p>
                         </div>
                         <div>
-                            <p className="font-bold text-gray-700 text-xl">89</p>
-                            <p className="text-gray-400">Comments</p>
+                            <p className="font-bold text-gray-700 text-xl">0</p>
+                            <p className="text-gray-400">Бонусы</p>
                         </div>
                     </div>
                     <div className="relative">
@@ -32,6 +35,13 @@ export default async function Profile() {
                             </svg>
                         </div>
                     </div>
+                    {
+                        data.session.user.email?.includes('admin') ?
+                        <Link href='profile/adminpanel'>
+                            Панель админа
+                        </Link> : null
+                    }
+
 
                     <div className="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
                         <button
@@ -39,6 +49,7 @@ export default async function Profile() {
                         >
                             предыдущие заказы
                         </button>
+                        <SignOut />
                         <button
                             className="text-white basis-[33%] py-2 px-4 uppercase rounded bg-gray-700 hover:bg-gray-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"
                         >
@@ -48,11 +59,7 @@ export default async function Profile() {
                 </div>
 
                 <div className="mt-20 text-center pb-12">
-                    <h1 className="text-4xl font-medium text-gray-700">Jessica Jones, <span className="font-light text-gray-500">27</span></h1>
-                    <p className="font-light text-gray-600 mt-3">Bucharest, Romania</p>
-
-                    <p className="mt-8 text-gray-500">Solution Manager - Creative Tim Officer</p>
-                    <p className="mt-2 text-gray-500">University of Computer Science</p>
+                    <h1 className="text-4xl font-medium text-gray-700">{data.session.user.email}</h1>
                 </div>
             </div>
         </div>

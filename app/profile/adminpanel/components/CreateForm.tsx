@@ -7,11 +7,10 @@ import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import {
 	Form,
-	FormControl,
 	FormField,
 	FormItem,
 	FormLabel,
-	FormMessage,
+	FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
@@ -62,24 +61,22 @@ export default function CreateForm() {
 					name="name"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Title</FormLabel>
-							<FormControl>
-								<Input
-									placeholder="doctor name"
-									{...field}
-									onChange={field.onChange}
-								/>
-								<Input
-									placeholder="doctor special"
-									{...field}
-									onChange={field.onChange}
-								/>
-								<Input
-									placeholder="doctor stage"
-									{...field}
-									onChange={field.onChange}
-								/>
-							</FormControl>
+							<FormLabel>Добавление нового врача</FormLabel>
+							<Input
+								placeholder="name"
+								{...field}
+								onChange={field.onChange}
+							/>
+							<Input
+								placeholder="special"
+								{...field}
+								onChange={field.onChange}
+							/>
+							<Input
+								placeholder="stage"
+								{...field}
+								onChange={field.onChange}
+							/>
 							<FormMessage />
 						</FormItem>
 					)}
