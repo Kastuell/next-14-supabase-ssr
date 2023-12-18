@@ -1,5 +1,5 @@
 import getDoctors from "@/actions/getDoctors";
-import updateDoctors from "@/actions/updateDoctors";
+import { toggle } from "@/actions/updateDoctors";
 import { Star } from "lucide-react";
 
 export default async function Doctors() {
@@ -27,11 +27,18 @@ export default async function Doctors() {
   //   { id: 1, special: special, name: name, stage: stage, img: img },
   // ];
 
-  async function toggle( is_favorite: any, id: any) {
-    updateDoctors(is_favorite, id)
-    console.log( 'is_favorite:', is_favorite , 'id', id)
+  // async function toggle( is_favorite: any, id: any) {
+  //   updateDoctors(is_favorite, id)
+  //   console.log( 'is_favorite:', is_favorite , 'id', id)
 
+  // }
+
+// @ts-ignore
+  const tgl = (is_favorite: any, id: any) => {
+    toggle(is_favorite, id)
   }
+
+  
   const data = await getDoctors()
   console.log(data)
   return (
@@ -51,8 +58,8 @@ export default async function Doctors() {
                 </div>
                 <div>{doctor.special}</div>
                 <div className="mt-[20px] p-5 bg-maincolor">Стаж: {doctor.stage}</div>
-                {/* @ts-ignore */}
-                <button onClick={toggle(!doctor.is_favorite, doctor.id)}>{doctor.is_favorite == false ? <Star /> : <Star color="yellow" />}</button>
+                 {/* @ts-ignore  */}
+                <button onClick={tgl(doctor.is_favorite, doctor.id)}>{doctor.is_favorite == false ? <Star /> : <Star color="yellow" />}</button>
               </div>
             </div>
           ))}
