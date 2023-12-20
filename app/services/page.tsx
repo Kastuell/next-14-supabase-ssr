@@ -3,9 +3,7 @@ import Link from "next/link"
 
 
 export default async function Servicec() {
-    // const res = await fetch('my-json-server.typicode.com/Kastuell/next-14-supabase-ssr/services')
-    // const services = await res.json()
-    
+
     const ServiceList = [
         { id: '1', name: 'Магнитно-Резонансная Томография', img: '../files/cmho.png', path: '/mrt', description: '123' },
         { id: '2', name: 'Компьютерная Томография', img: '../files/cmho.png', path: '/kt' },
@@ -34,7 +32,7 @@ export default async function Servicec() {
                 <h1 className=" text-4xl">Наши Услуги</h1>
                 <div className="mt-10 grid grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1">
                     {ServiceList.map((service:any) => (
-                        <Link href={`services${service.path}`}>
+                        <Link key={service.id} href={`services${service.path}`}>
                             <div className="grid grid-cols-[1fr_3fr_1fr] rounded-3xl items-center p-5 border min-h-[100px] lg:min-h-[130px]">
                                 <div><Stethoscope size={32} /></div>
                                 <div>{service.name}</div>

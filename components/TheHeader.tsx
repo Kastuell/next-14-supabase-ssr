@@ -54,7 +54,7 @@ export default function TheHeader() {
                         </p>
                     </div>
                     <ul className="flex items-center gap-12 lg:gap-6 md:hidden">
-                        {NavInfo.map(item => <li><Link href={item.href} className="font-medium 
+                        {NavInfo.map(item => <li key={item.id}><Link href={item.href} className="font-medium 
                                 text-xl 
                                 text-stone-800 
                                 hover:text-maincolor 

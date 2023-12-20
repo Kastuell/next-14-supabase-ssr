@@ -22,7 +22,7 @@ const HamburgerMenu: FC<HamburgerMenuI> = ({ NavInfo }) => {
             {isVisible &&
                 <div className="flex flex-col gap-y-2 p-8 bg-green-50 absolute top-[70px] right-10 border z-50">
                     <ul className="flex flex-col gap-3 bg-green">
-                        {NavInfo.map(item => <li className="list-none"><Link href={item.href} className="font-medium 
+                        {NavInfo.map(item => <li key={item.id} className="list-none"><Link href={item.href} className="font-medium 
                                 text-xl 
                                 text-stone-800 
                                 hover:text-maincolor 
