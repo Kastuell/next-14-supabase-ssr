@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image';
 import { Component } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -27,10 +26,9 @@ export default class Slider extends Component {
             <div className="flex justify-center items-center ">
                 
                 <Carousel stopOnHover={true} showThumbs={false} showStatus={false} infiniteLoop={true} autoPlay={true} interval={5000} className="overflow-hidden aspect-video overflow-x-hidden snap-mandatory scroll-smooth shadow-[0_6px_12px_-3px_rgba(0,0,0,0.3)]">
-        
-                    <Image alt='123' className="flex-10100 snap-start object-cover rounded-lg" src="https://www.grayreed.com/Practices/.../portalresource/lookup/poid/Z1tOl9NPlK4UmLcSfLcRZLMGoLMOVbMRXTMPpfZCpC3%21/photoWeb.name%3D/iStock-478255432.jpg" ></Image>
-                    <Image alt='123' className="flex-10100 snap-start object-cover rounded-lg" src="https://медуниверситет.рф/upload/iblock/2c9/m3gma8pjrgp9ydufisqi2osts781obwl.jpg" ></Image>
-                    <Image alt='123' className="flex-10100 snap-start object-cover rounded-lg" src="https://ic.pics.livejournal.com/konstolkh2016/78629009/433223/433223_original.jpg" ></Image>
+                    <img className="flex-10100 snap-start object-cover rounded-lg" src="https://www.grayreed.com/Practices/.../portalresource/lookup/poid/Z1tOl9NPlK4UmLcSfLcRZLMGoLMOVbMRXTMPpfZCpC3%21/photoWeb.name%3D/iStock-478255432.jpg" />
+                    <img className="flex-10100 snap-start object-cover rounded-lg" src="https://медуниверситет.рф/upload/iblock/2c9/m3gma8pjrgp9ydufisqi2osts781obwl.jpg" />
+                    <img className="flex-10100 snap-start object-cover rounded-lg" src="https://ic.pics.livejournal.com/konstolkh2016/78629009/433223/433223_original.jpg" />
                 </Carousel>
             </div>
         )
