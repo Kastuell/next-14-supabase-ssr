@@ -1,23 +1,6 @@
-import { FaInstagram } from "react-icons/fa";
 
 export default function TheFooter() {
 
-    const Icons = [
-        { id: '1', href: '/', tag: <FaInstagram /> },
-        { id: '2', href: '/', tag: <FaInstagram /> },
-        { id: '3', href: '/', tag: <FaInstagram /> },
-        { id: '4', href: '/', tag: <FaInstagram /> },
-        { id: '5', href: '/', tag: <FaInstagram /> },
-    ]
-
-    const NavInfo = [
-        { id: 1, href: '/', text: 'Главная', },
-        { id: 2, href: '/', text: 'Услуги', },
-        { id: 3, href: '/', text: 'Врачи', },
-        { id: 4, href: '/', text: 'Блог', },
-        { id: 5, href: '/', text: 'Запись', },
-        { id: 6, href: '/', text: 'О нас', },
-    ]
 
     return (
         
@@ -28,7 +11,7 @@ export default function TheFooter() {
                     Медицинский центр «Инвентум»
                 </div>
                 <div className=" text-[#65b0d6] pb-[20px]">
-                    ООО "Инвентум"
+                    ООО &ldquo;Инвентум&ldquo;
                 </div>
                 <div className="flex pb-[20px]">
                     {/* добавить ссылки */}

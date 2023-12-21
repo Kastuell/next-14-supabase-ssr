@@ -1,6 +1,7 @@
 "use server"
 import getDoctors from "@/actions/getDoctors";
 import ChangePost from "@/components/changee";
+import Image from "next/image";
 
 export default async function Doctors() {
   // const img = "../doctor.jpg";
@@ -44,7 +45,7 @@ export default async function Doctors() {
                         <div key={doctor.id}>
                             <div className="flex flex-col   w-[250px] border border-maincolor rounded-t-[25px] overflow-hidden">
                                 <div className=" basis-[25%]">
-                                    <img className="w-[250px]" src={doctor.img} alt="" />
+                                    <Image className="w-[250px]" src={doctor.img} alt="123" ></Image>
                                 </div>
                                 <div className="mt-[10px] basis-[25%]">
                                     <div>{doctor.name.split(" ").slice(0, 1).join(" ")}</div>
